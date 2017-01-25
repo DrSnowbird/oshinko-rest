@@ -1,0 +1,45 @@
+user1@eagle:/mnt/ntfs/VMs/openshift3/oshinko-rest$ oc login
+Authentication required for https://10.2.2.2:8443 (openshift)
+Username: openshift
+Password: 
+Login successful.
+
+You have access to the following projects and can switch between them with 'oc project <projectname>':
+
+    my-guestbook
+    openshift3mlbparks
+  * spark-cluster
+
+Using project "spark-cluster".
+user1@eagle:/mnt/ntfs/VMs/openshift3/oshinko-rest$ oc status
+In project spark-cluster on server https://10.2.2.2:8443
+
+svc/oshinko-rest - 172.30.129.64:8081
+  dc/oshinko deploys 
+    docker.io/radanalyticsio/oshinko-rest:latest
+    deployment #1 deployed 34 minutes ago - 1 pod
+    docker.io/radanalyticsio/oshinko-webui:latest
+    deployment #1 deployed 34 minutes ago - 1 pod
+
+http://oshinko-web-spark-cluster.apps.10.2.2.2.xip.io (svc/oshinko-web)
+  dc/oshinko deploys 
+    docker.io/radanalyticsio/oshinko-rest:latest
+    deployment #1 deployed 34 minutes ago - 1 pod
+    docker.io/radanalyticsio/oshinko-webui:latest
+    deployment #1 deployed 34 minutes ago - 1 pod
+
+http://spark-test-spark-cluster.apps.10.2.2.2.xip.io (svc/spark-test)
+  dc/spark-test-m deploys docker.io/radanalyticsio/openshift-spark:latest 
+    deployment #2 deployed 13 minutes ago - 1 pod
+    deployment #1 deployed 26 minutes ago
+
+http://spark-test-ui-spark-cluster.apps.10.2.2.2.xip.io (svc/spark-test-ui)
+  dc/spark-test-m deploys docker.io/radanalyticsio/openshift-spark:latest 
+    deployment #2 deployed 13 minutes ago - 1 pod
+    deployment #1 deployed 26 minutes ago
+
+dc/spark-test-w deploys docker.io/radanalyticsio/openshift-spark:latest 
+  deployment #1 deployed 26 minutes ago - 4 pods
+
+1 warning identified, use 'oc status -v' to see details.
+
